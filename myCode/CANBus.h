@@ -23,6 +23,6 @@ public:
     void clear();
 };
 
-std::ostream operator<<(const std::ostream& out, const CANBus& bus);
+std::ostream operator<<(std::ostream& out, const CANBus& bus);
 
 #endif /* CANBUS_H_ */
