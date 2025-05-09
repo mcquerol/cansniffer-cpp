@@ -22,7 +22,10 @@ public:
     CANMessage(uint8_t dlc, const std::array<uint8_t, 8>& data);
     virtual ~CANMessage() = default;
 
-    virtual uint32_t getId() const;
+    uint8_t getDLC() const;
+    std::array<uint8_t, 8> getData() const;
+
+    virtual uint32_t getID() const = 0;
     virtual std::string toString() const = 0;
 };
 
