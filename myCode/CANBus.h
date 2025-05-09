@@ -5,11 +5,11 @@
  *      Author: mateo
  */
 
-#ifndef VEHICLECANBUS_H_
-#define VEHICLECANBUS_H_
+#ifndef CANBUS_H_
+#define CANBUS_H_
 
 class VehicleCANBus
 {
 };
 
-#endif /* VEHICLECANBUS_H_ */
+#endif /* CANBUS_H_ */
