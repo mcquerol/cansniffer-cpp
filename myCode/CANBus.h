@@ -12,7 +12,8 @@
 #include <vector>
 #include <memory>
 
-class CANBus {
+class CANBus
+{
 private:
     std::vector<std::shared_ptr<CANMessage>> messageQueue;
 
