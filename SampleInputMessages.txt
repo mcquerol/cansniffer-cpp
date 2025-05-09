@@ -1,0 +1,1 @@
+This file will be used for sample message data to simulate the CAN BUS
