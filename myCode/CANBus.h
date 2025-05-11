@@ -23,8 +23,6 @@ public:
     bool hasMessages() const;
     void clear();
 
-    CANBus& operator+=(const CANBus& bus);
-
 };
 
 std::ostream operator<<(std::ostream& out, const CANBus& bus);

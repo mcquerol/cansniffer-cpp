@@ -7,3 +7,26 @@
 
 #include "CANBus.h"
 
+void CANBus::sendMessage(const std::shared_ptr<CANMessage> &message)
+{
+}
+
+std::shared_ptr<CANMessage> CANBus::receiveMessage()
+{
+}
+
+bool CANBus::hasMessages() const
+{
+}
+
+void CANBus::clear()
+{
+}
+
+CANBus& CANBus::operator +=(const CANBus &bus)
+{
+}
+
+std::ostream operator <<(std::ostream &out, const CANBus &bus)
+{
+}
