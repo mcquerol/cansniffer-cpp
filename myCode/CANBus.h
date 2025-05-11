@@ -22,8 +22,12 @@ public:
     std::shared_ptr<CANMessage> receiveMessage();
     bool hasMessages() const;
     void clear();
+
+    CANBus& operator+=(const CANBus& bus);
+
 };
 
 std::ostream operator<<(std::ostream& out, const CANBus& bus);
+
 
 #endif /* CANBUS_H_ */
