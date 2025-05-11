@@ -23,6 +23,7 @@ bool CANBus::hasMessages() const
 
 void CANBus::clear()
 {
+	messageQueue.clear(); //check individually clearing shared pointers is needed
 }
 
 std::ostream operator <<(std::ostream &out, const CANBus &bus)
