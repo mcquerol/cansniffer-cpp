@@ -23,10 +23,6 @@ void CANBus::clear()
 {
 }
 
-CANBus& CANBus::operator +=(const CANBus &bus)
-{
-}
-
 std::ostream operator <<(std::ostream &out, const CANBus &bus)
 {
 }
