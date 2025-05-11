@@ -19,13 +19,13 @@ private:
 
 public:
     void sendMessage(const std::shared_ptr<CANMessage>& message);
-    std::shared_ptr<CANMessage> receiveMessage();
+    std::vector<std::shared_ptr<CANMessage>>& getMessageQueue() const;
     bool hasMessages() const;
     void clear();
 
 };
 
-std::ostream operator<<(std::ostream& out, const CANBus& bus);
+std::ostream& operator<<(std::ostream& out, const CANBus& bus);
 
 
 #endif /* CANBUS_H_ */
