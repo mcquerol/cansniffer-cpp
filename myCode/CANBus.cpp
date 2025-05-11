@@ -12,14 +12,14 @@ void CANBus::sendMessage(const std::shared_ptr<CANMessage> &message)
 	messageQueue.emplace_back(message);
 }
 
-std::shared_ptr<CANMessage> CANBus::receiveMessage()
-{
-	return messageQueue.back();
-}
-
 bool CANBus::hasMessages() const
 {
 	return !messageQueue.empty();
+}
+
+std::vector<std::shared_ptr<CANMessage> >& CANBus::getMessageQueue() const
+{
+	return messageQueue;
 }
 
 void CANBus::clear()
@@ -27,6 +27,6 @@ void CANBus::clear()
 	messageQueue.clear(); //check individually clearing shared pointers is needed
 }
 
-std::ostream operator <<(std::ostream &out, const CANBus &bus)
+std::ostream& operator <<(std::ostream &out, const CANBus &bus)
 {
 }
