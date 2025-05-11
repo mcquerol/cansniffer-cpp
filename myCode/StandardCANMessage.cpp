@@ -21,10 +21,10 @@ uint32_t StandardCANMessage::getID() const
 std::string StandardCANMessage::toString() const
 {
 	string result;
-    result = "StandardID: 0x" + standardID + ", DLC: " + dlc << ", Data: ";
+    result = "StandardID: 0x" + to_string(standardID) + ", DLC: " + to_string(dlc) + ", Data: ";
     for (const auto& byte : getData())
     {
-    	result += static_cast<int>(byte) << ' ';
+    	result += static_cast<int>(byte) + ' ';
     }
     return result;
 }

@@ -21,7 +21,7 @@ uint32_t ExtendedCANMessage::getID() const
 std::string ExtendedCANMessage::toString() const
 {
 	string result;
-    result = "ExtendedId: 0x" + extendedID + ", DLC: " + dlc + ", Data: ";
+    result = "ExtendedId: 0x" + to_string(extendedID) + ", DLC: " + to_string(dlc) + ", Data: ";
     for (const auto& byte : getData())
     {
     	result += static_cast<int>(byte) + ' ';
