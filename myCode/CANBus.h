@@ -19,7 +19,7 @@ private:
 
 public:
     void sendMessage(const std::shared_ptr<CANMessage>& message);
-    std::vector<std::shared_ptr<CANMessage>>& getMessageQueue() const;
+    const std::vector<std::shared_ptr<CANMessage>>& getMessageQueue() const;
     bool hasMessages() const;
     void clear();
 

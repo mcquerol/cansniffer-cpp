@@ -20,7 +20,7 @@ bool CANBus::hasMessages() const
 	return !messageQueue.empty();
 }
 
-std::vector<std::shared_ptr<CANMessage>>& CANBus::getMessageQueue() const
+const std::vector<std::shared_ptr<CANMessage>>& CANBus::getMessageQueue() const
 {
 	return messageQueue;
 }
