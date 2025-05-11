@@ -9,6 +9,7 @@
 
 void CANBus::sendMessage(const std::shared_ptr<CANMessage> &message)
 {
+	messageQueue.emplace_back(message);
 }
 
 std::shared_ptr<CANMessage> CANBus::receiveMessage()
