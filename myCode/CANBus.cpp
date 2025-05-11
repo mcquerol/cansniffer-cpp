@@ -18,6 +18,7 @@ std::shared_ptr<CANMessage> CANBus::receiveMessage()
 
 bool CANBus::hasMessages() const
 {
+	return !messageQueue.empty();
 }
 
 void CANBus::clear()
