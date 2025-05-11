@@ -14,6 +14,7 @@ void CANBus::sendMessage(const std::shared_ptr<CANMessage> &message)
 
 std::shared_ptr<CANMessage> CANBus::receiveMessage()
 {
+	return messageQueue.back();
 }
 
 bool CANBus::hasMessages() const
