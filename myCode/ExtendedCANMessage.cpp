@@ -10,7 +10,7 @@
 
 using namespace std;
 
-ExtendedCANMessage::ExtendedCANMessage(uint32_t id, uint8_t dlc, const std::array<uint8_t, 8> &data) : extendedID{id}, CANMessage{dlc, data}
+ExtendedCANMessage::ExtendedCANMessage(uint32_t id, uint8_t dlc, const std::array<uint8_t, 8> &data) : CANMessage{dlc, data}, extendedID{id}
 {
 }
 
