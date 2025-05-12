@@ -11,7 +11,7 @@
 
 using namespace std;
 
-StandardCANMessage::StandardCANMessage(uint16_t id, uint8_t dlc, const std::array<uint8_t, 8> &data) : standardID{id}, CANMessage{dlc, data}
+StandardCANMessage::StandardCANMessage(uint16_t id, uint8_t dlc, const std::array<uint8_t, 8> &data) : CANMessage{dlc, data}, standardID{id}
 {
 }
 
