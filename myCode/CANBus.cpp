@@ -34,7 +34,7 @@ std::ostream& operator <<(std::ostream& out, const CANBus& bus)
 {
 	while(bus.hasMessages())
 	{
-		auto queue = bus.getMessageQueue();
+		const auto& queue = bus.getMessageQueue();
 		for(const auto& message : queue)
 		{
 			out << message->toString() << endl;
