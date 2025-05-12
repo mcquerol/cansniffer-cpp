@@ -5,6 +5,8 @@
  *      Author: mateo
  */
 
+#include <sstream>
+
 #include "StandardCANMessage.h"
 
 using namespace std;
@@ -20,11 +22,11 @@ uint32_t StandardCANMessage::getID() const
 
 std::string StandardCANMessage::toString() const
 {
-	string result;
-    result = "StandardID: 0x" + to_string(standardID) + ", DLC: " + to_string(dlc) + ", Data: ";
-    for (const auto& byte : getData())
-    {
-    	result += static_cast<int>(byte) + ' ';
-    }
-    return result;
+    ostringstream ss;
+	ss << "StandardID: 0x" << hex << standardID << ", DLC: " << dec << dlc << ", Data: ";
+	for (size_t i = 0; i < dlc; ++i)
+	{
+		ss << static_cast<char>(data[i]);
+	}
+	return ss.str();
 }

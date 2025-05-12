@@ -6,6 +6,7 @@
  */
 
 #include "ExtendedCANMessage.h"
+#include <sstream>
 
 using namespace std;
 
@@ -20,11 +21,11 @@ uint32_t ExtendedCANMessage::getID() const
 
 std::string ExtendedCANMessage::toString() const
 {
-	string result;
-    result = "ExtendedId: 0x" + to_string(extendedID) + ", DLC: " + to_string(dlc) + ", Data: ";
-    for (const auto& byte : getData())
-    {
-    	result += static_cast<int>(byte) + ' ';
-    }
-    return result;
+    ostringstream ss;
+	ss << "ExtendedID: 0x" << hex << extendedID << ", DLC: " << dec << dlc << ", Data: ";
+	for (size_t i = 0; i < dlc; ++i)
+	{
+		ss << static_cast<char>(data[i]);
+	}
+	return ss.str();
 }
