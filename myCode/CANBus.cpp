@@ -32,13 +32,10 @@ void CANBus::clear()
 
 std::ostream& operator <<(std::ostream& out, const CANBus& bus)
 {
-	while(bus.hasMessages())
+	const auto& queue = bus.getMessageQueue();
+	for(const auto& message : queue)
 	{
-		const auto& queue = bus.getMessageQueue();
-		for(const auto& message : queue)
-		{
-			out << message->toString() << endl;
-		}
+		out << message->toString() << endl;
 	}
 
 	return out;
